@@ -1,0 +1,19 @@
+<h1><%= @restaurant.name %></h1>
+<p><%= @restaurant.address %></p>
+<p><%= @restaurant.phone_number %></p>
+<p><%= @restaurant.category %></p>
+<hr>
+<%# <%= link_to 'Write a scatching review', new_restaurant_review_path %>
+<div class='container'>
+<h2>Reviews</h2>
+  <div class='card' style='width: 18rem'>
+    <% @restaurant.reviews.each do |review| %>
+      <h2><%= '⭐️' * review.rating %></h2>
+      <p><%= review.content %></p>
+    <% end %>
+      <hr>
+  </div>
+</div>
+
+
+<%= link_to 'Back', restaurants_path %>

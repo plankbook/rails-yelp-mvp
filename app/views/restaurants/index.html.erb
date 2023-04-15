@@ -1,0 +1,12 @@
+<h1>Restaurants</h1>
+<%# <a href='' class="btn btn-danger">Create New</a> %>
+<%= link_to 'Create New Restaurant', new_restaurant_path %>
+<div class='container'>
+  <div class='card' style='width: 18rem'>
+    <% @restaurants.each do |restaurant| %>
+      <h2><%= link_to restaurant.name, restaurant_path(restaurant) %></h2>
+      <p><%= restaurant.address %></p>
+      <hr>
+    <% end %>
+  </div>
+</div>
